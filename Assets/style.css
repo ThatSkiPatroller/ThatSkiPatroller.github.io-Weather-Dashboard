@@ -1,0 +1,12 @@
+.jumbotron {
+    font-weight: bold;
+    font-size: large;
+    background-color: darkgray;
+    color: white;
+    text-align: center;
+}
+
+#ibm {
+    background-color: black;
+}
+
