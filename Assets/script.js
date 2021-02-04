@@ -1,25 +1,32 @@
-$(document).ready(function () {
+
 // Assign variables
-var city = $("#searchCity").val();
-// Fetch api function
+
+
     
 
 
 // Create search function
-    $(".btn").on("click", function () {
-        if ($("#searchCity" != undefined)) {
-            for (i=0; i <= 8; i++) {
-                localStorage.setItem("city"+[i], city);
-                weatherCity();
-            };
+    $(".btn").on("click", function (event) {
+        event.preventDefault();
+        var city = $("#searchCity").val().trim();
+         if (city != '') {  
+            weatherCity(city);
         };
-   function weatherCity (city) {
-        var key = "9c797ab1cb0980f8f94ba90e9619d5fd";
-         fetch('api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key)
-        .then(function(resp) { (resp.json())})
-        .then(function(data) {
-            console.log(data);
-        }); 
-    };     
-});
-});
+}); 
+
+// api function
+function weatherCity (city) {
+    console.log(city);
+    var key = '9c797ab1cb0980f8f94ba90e9619d5fd';
+    var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key;
+    console.log(url);
+    $.ajax({
+        url: url,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+    })
+};
+
+
+
