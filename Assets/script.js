@@ -24,9 +24,13 @@ function weatherCity (city) {
         url: url,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
+        return response.json();
     })
 };
 
+function weathercards () {
+    var temp = Math.round(parseFloat(d.main.temp)-273.15);
+    document.getElementById('citylist').innerHTML = d.name;
+}
 
 
