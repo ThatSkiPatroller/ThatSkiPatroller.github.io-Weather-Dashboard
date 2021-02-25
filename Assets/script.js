@@ -5,7 +5,7 @@ var dateplace = document.getElementById("currentdate");
     
 
 
-// Create search function
+// When search button is clicked, pass the value of the search field into weatherCity function
     $(".btn").on("click", function (event) {
         event.preventDefault();
         var city = $("#searchCity").val().trim();
@@ -15,7 +15,7 @@ var dateplace = document.getElementById("currentdate");
         };
 }); 
 
-// api function
+// Call openweather api and pass data into functions
 function weatherCity (city) {
     console.log(city);
     var key = '9c797ab1cb0980f8f94ba90e9619d5fd';
@@ -31,6 +31,7 @@ function weatherCity (city) {
     });
 };
 
+// Add city returned from api data to a button that can be clicked
 function addCity (response) {
     var pastcities = [];
     var cityholder = response.city.name;
@@ -41,6 +42,7 @@ function addCity (response) {
     // var newstored = JSON.stringify(storedcities);
     // console.log(storedcities[0]);
 
+// For each element (city) in the array create a button
     pastcities.forEach(function (element) {
             console.log(element);
             var newCity = document.createElement("button");
@@ -50,11 +52,17 @@ function addCity (response) {
         });
     };
 
+// Function to display current city, date, weather icon as the header; and current Temp, Humidity, Wind Speed, UV index listed below
 function cityinfo (response) {
     var date = response.list[0].dt_txt;
     console.log(date);
     $("#currentdate").html(date);
 };
+
+// When a pastcity button is clicked, update elements to that cities content
+$("citybuttons").click(function () {
+
+});
 
     // for (var i = 0; i<9; i++) {
         
