@@ -10,3 +10,7 @@
     
 }
 
+.citybuttons {
+    display: flex;
+    flex-direction: column;
+}
