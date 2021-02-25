@@ -1,7 +1,7 @@
 
 // Assign variables
 var citylist = document.getElementById("citylist");
-
+var dateplace = document.getElementById("currentdate");
     
 
 
@@ -26,6 +26,7 @@ function weatherCity (city) {
     }).then(function (data) {
         // weather(data);
         addCity(data);
+        cityinfo(data);
         // searchedCities(data);
     });
 };
@@ -48,6 +49,12 @@ function addCity (response) {
             citylist.append(newCity);
         });
     };
+
+function cityinfo (response) {
+    var date = response.list[0].dt_txt;
+    console.log(date);
+    $("#currentdate").html(date);
+};
 
     // for (var i = 0; i<9; i++) {
         
