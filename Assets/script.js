@@ -57,7 +57,11 @@ function addCity (response) {
 
 function cityinfo (response) {
 // Element that date currently goes in
-var juice = document.createElement("h4");
+var card = document.createElement("div");
+card.classList.add("card");
+
+var juice = document.createElement("h1");
+juice.classList.add("card-title");
 // New array so each time through loop a character is pushed into it
 console.log(dateplace.children.length);
 var datearray = [];
@@ -69,7 +73,8 @@ if (dateplace.children.length < 1) {
 
 var finaldate = datearray.join("");
 juice.innerText = finaldate;
-dateplace.append(juice);
+dateplace.append(card);
+card.appendChild(juice);
     };
 };
 console.log(dateplace.children.length);
