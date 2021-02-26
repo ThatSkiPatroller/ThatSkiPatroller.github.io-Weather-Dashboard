@@ -41,9 +41,10 @@ function addCity (response) {
     var storedcities = localStorage.getItem("city");
     // var newstored = JSON.stringify(storedcities);
     // console.log(storedcities[0]);
-
+    
 // For each element (city) in the array create a button
     pastcities.forEach(function (element) {
+        
             console.log(element);
             var newCity = document.createElement("button");
             newCity.classList.add("citybuttons");
@@ -53,13 +54,27 @@ function addCity (response) {
     };
 
 // Function to display current city, date, weather icon as the header; and current Temp, Humidity, Wind Speed, UV index listed below
+
 function cityinfo (response) {
-    var date = response.list[0].dt_txt;
-    console.log(date);
-    $("#currentdate").html(date);
+var juice = document.createElement("h4");
+var datearray = [];
+    for (var i=0; i<=9; i++) {
+        var date = response.list[0].dt_txt[i];
+        datearray.push(date);
+
+    };
+
+var finaldate = datearray.join("");
+juice.innerText = finaldate;
+dateplace.append(juice);
+
 };
 
 // When a pastcity button is clicked, update elements to that cities content
 $("citybuttons").click(function () {
+
+});
+
+$("#currentdate").html(function () {
 
 });
