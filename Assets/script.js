@@ -74,9 +74,17 @@ function cityinfo (response) {
         };
 
     var finaldate = datearray.join("");
-    juice.innerText = finaldate;
+    var city = response.city.name;
+    juice.innerText = city + " " + "(" + finaldate + ")";
     dateplace.append(card);
     card.appendChild(juice);
+// Adding temp, humidity and windspeed to created card element
+    var city = $(".card-title");
+    var temp = document.createElement("h2");
+    var fht = Math.floor(response.list[0].main.temp * (9/5) - 459.67);
+    temp.classList.add("card-content");
+    temp.innerHTML = "<ul> <li> Temperature: " + fht + "</li></ul";
+    juice.appendChild(temp);
     };
 };
 console.log(dateplace.children.length);
@@ -90,7 +98,9 @@ $(".citybuttons").click(function () {
 
 // Function to display current city, date, weather icon as the header; and current Temp, Humidity, Wind Speed, UV index listed below
 function mainElements (response) {
-    var city = response.city.name;
+    
+    
+    console.log(fht);
     
 };
 
