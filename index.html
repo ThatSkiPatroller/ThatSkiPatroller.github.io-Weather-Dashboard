@@ -14,13 +14,13 @@
     </div>
     <div class="container">
         <div class ="row py-3">
-            <div class="col-3" id="sticky-sidebar">
+            <div class="col-4" id="sticky-sidebar">
                 <div class="sticky-top">
                     <h1>Search for a City:</h1>
                     <div class="input-group">
                         <input type="search" class="form-control rounded" id="searchCity" placeholder="Search" aria-label="Search"
                         aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary">search</button>
+                        <button type="button" class="btn btn-outline-primary" id="searching">search</button>
                     </div>
                     <div id="citylist">
                     </div>
@@ -28,10 +28,11 @@
             </div>
             <div class="col-6" id="ibm">
                 <div id="currentdate"></div>
-            <div class="col-6">
-                <h1>5-Day Forecast</h1>
-                <div id="forecast"></div>
-            </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h1>5-Day Forecast</h1>
+                        <div id="forecast"></div>
+                    </div>
                 </div>
             </div>
         </div>
