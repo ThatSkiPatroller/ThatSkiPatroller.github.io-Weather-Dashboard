@@ -82,8 +82,10 @@ function cityinfo (response) {
     var city = $(".card-title");
     var temp = document.createElement("h2");
     var fht = Math.floor(response.list[0].main.temp * (9/5) - 459.67);
+    var humid = response.list[0].main.humidity;
+    var wind = Math.floor(response.list[0].wind.speed * 2.237);
     temp.classList.add("card-content");
-    temp.innerHTML = "<ul> <li> Temperature: " + fht + "</li></ul";
+    temp.innerHTML = "<ul><li> Temperature: " + fht + "°F </li><li> Humidity: " + humid + "% </li><li> Windspeed: " + wind + "MPH </li></ul>";
     juice.appendChild(temp);
     };
 };
